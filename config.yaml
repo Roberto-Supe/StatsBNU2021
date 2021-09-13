@@ -1,7 +1,7 @@
-baseURL: http://localhost:1313/
+baseURL: https://bnustats2021.netlify.app/
 languageCode: en
 defaultContentLanguage: en
-title: Even - A super concise theme for Hugo
+title: Environmental Statistis BNU
 preserveTaxonomyNames: yes
 enableRobotsTXT: yes
 enableEmoji: yes
@@ -12,12 +12,12 @@ pygmentsCodefences: yes
 pygmentsUseClasses: yes
 pygmentsCodefencesGuessSyntax: yes
 hasCJKLanguage: yes
-paginate: 5
+paginate: 10
 disqusShortname: ''
-googleAnalytics: ''
+googleAnalytics: 'G-0QZ904CXTS'
 copyright: ''
 author:
-  name: olOwOlo
+  name: Xavier Supe
 sitemap:
   changefreq: weekly
   filename: sitemap.xml
@@ -28,18 +28,26 @@ menu:
       name: Home
       url: /
       weight: 10
-    - identifier: archives
-      name: Archives
-      url: /post/
+    - identifier: admin
+      name: Xavier Supe
+      url: https://xaviersupe.netlify.app/
       weight: 20
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 30
-    - identifier: categories
-      name: Categories
-      url: /categories/
-      weight: 40
+    - identifier: school
+      name: SoE-BNU
+      url: https://env.bnu.edu.cn/english/
+      weight: 30      
+    # - identifier: archives
+    #   name: Archives
+    #   url: /post/
+    #   weight: 20
+    # - identifier: tags
+    #   name: Tags
+    #   url: /tags/
+    #   weight: 30
+    # - identifier: categories
+    #   name: Categories
+    #   url: /categories/
+    #   weight: 40
 params:
   archivePaginate: 50
   autoCollapseToc: no
@@ -58,7 +66,7 @@ params:
   customJS: []
   dateFormatToUse: '2006-01-02'
   debug: no
-  description: Hugo theme even example site.
+  description: Course content translated to R.
   fancybox: yes
   flowchartDiagrams:
     enable: no
@@ -77,16 +85,22 @@ params:
   googleVerification: ''
   highlightInClient: no
   keywords:
-    - Hugo
-    - theme
-    - even
+    - R
+    - Statistics
+    - Linear models
+    - Tutorials
+    - Code
+    - ANOVAS
+    - Regressions
+    - Rmarkdown
+    - Ggplot2
   linkToMarkDown: no
   livereUID: ''
-  logoTitle: Even
-  mathjax: no
-  mathjaxEnableAutoNumber: no
-  mathjaxEnableSingleDollar: no
-  mathjaxUseLocalFiles: no
+  logoTitle: Environmental Statistics
+  mathjax: yes
+  mathjaxEnableAutoNumber: yes
+  mathjaxEnableSingleDollar: yes
+  mathjaxUseLocalFiles: yes
   moreMeta: no
   outdatedInfoWarning:
     enable: no
@@ -132,23 +146,24 @@ params:
     options: ''
   showArchiveCount: no
   showLanguageSelector: no
-  since: '2017'
+  since: '2021'
   social:
-    a-email: mailto:your@email.com
-    b-stack-overflow: http://localhost:1313
-    c-twitter: http://localhost:1313
-    d-facebook: http://localhost:1313
-    e-linkedin: http://localhost:1313
-    f-google: http://localhost:1313
-    g-github: http://localhost:1313
-    h-weibo: http://localhost:1313
-    i-zhihu: http://localhost:1313
-    j-douban: http://localhost:1313
-    k-pocket: http://localhost:1313
-    l-tumblr: http://localhost:1313
-    m-instagram: http://localhost:1313
-    n-gitlab: http://localhost:1313
-    o-bilibili: http://localhost:1313
+    a-email: mailto:xavysup.1@outlook.com
+    b-stack-overflow: https://stackoverflow.com/users/12704162/robertosupe
+    c-twitter: https://twitter.com/RobertoXST
+    # d-facebook: http://localhost:1313
+    e-linkedin: https://www.linkedin.com/in/xavier-supe-4a4988211/
+    # f-google: http://localhost:1313
+    g-github: https://github.com/Roberto-Supe
+    # h-weibo: http://localhost:1313
+    # i-zhihu: http://localhost:1313
+    # j-douban: http://localhost:1313
+    # k-pocket: http://localhost:1313
+    # l-tumblr: http://localhost:1313
+    # m-instagram: http://localhost:1313
+    # n-gitlab: http://localhost:1313
+    # o-bilibili: http://localhost:1313
+    p-web: 
   toc: yes
   uglyURLs: no
   utterances:

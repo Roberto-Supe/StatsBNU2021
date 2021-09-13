@@ -1,0 +1,105 @@
+---
+title: Getting Started
+author: admin
+date: '2021-09-09'
+slug: []
+categories: []
+tags: []
+lastmod: '2021-09-19T11:05:45+08:00'
+keywords: []
+description: ''
+comment: no
+toc: yes
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+## R & Rstudio
+
+First, we need to install two programs, [R](https://cran.r-project.org/) and [Rstudio](https://rstudio.com/products/rstudio/download/#download). You may be wondering the differences between R and Rstudio; we will not go into detail in this blog, but I will mention that Rstudio is the Graphics Interface Device that makes R much easier for us. Go to the pages and install the versions recommended for your machine. 
+
+<!--more-->
+
+Once you finished the installation, open R-studio, and let's get started by installing the following packages.
+
+
+```r
+#to install a package then you need to know the name of the package and run the following code
+install.packages("tidyverse") #ctrl+ enter to run a line
+install.packages(c("gapminder","ggpubr","ggsci","plotrix","plyr","gcookbook")) #multiple packages in one line
+```
+
+We load the packages every time that we open a new R session.
+
+
+```r
+#load them
+library(ggplot2)
+library(tidyverse)
+library(gcookbook)
+library(gapminder)
+library(ggpubr)
+library(ggsci)
+library(plyr)
+library(plotrix)
+```
+
+
+## Reading files
+
+There are several options to read a file containing your data numerical as R can read text, book pages, and others for further analysis. Similarly, your data does not need to be in an excel file; you are able to import a lot of formats as long as you are using the right package. Similarly, data can be directly obtained from other online databases. 
+
+Most of the time, we will use the classic `csv`,`txt`, and `xlxs` files. Let's begin by selecting a file that we want. Several files for online sources or the output of programs are in comma-separated format (CSV) to ensure that they can be open in different places. Therefore, it is common and advised that you save your files in that format so others can easily read them. Run the following line of code and select any `csv` file that you got on the computer. 
+
+
+```r
+df<-read.csv(file.choose(),skip = 0,header = T)
+df
+df<-read.csv("file.csv"/"file.txt") #read a file by using the name of the file 
+```
+
+We added the argument `skip` to indicate two points: first, each function in R has several arguments; some are by default like `skip=0` or `header=T`, meaning that you do not need to add them to obtain the results. Second, we can add indicators that will do the activities that we want; for example, files may contain 4 lines of text at the beginning; therefore, `skip=4` will not read the file until the 5th line; similarly, `header=F` is used for files with no column names. 
+
+> R-Studio requires you to have something well structured because you will have some documents that you may need to open after a long time. If you select **file.choose**, it is easy to forget which file you were working with. Therefore, when you get some data and are ready to work with something, have one folder for all the information and create **File** ⇨ **New Project**. You will save, store, share to anyone and they will be able to run the same things you did.
+
+We may want to read files from excel, so we will use a function to find different pages. If you got a large file and you don't want to create one `csv` file for each page, you can use the package `readxl` and call the `read_excel` function to do something like this.
+
+
+```r
+#install.packages("readxl")
+library(readxl)
+data <- read_excel("datafile.xls", sheet = 2) #page number
+data <- read_excel("datafile.xls", sheet = "Revenues") #name of the page
+```
+
+
+We can also copy to our clipboard some data and save it as a data frame. The package `clipr` has a function to convert the selection into a tibble directly.  
+
+* Open an excel file so we can copy the data for this exercise and copy the data that you one to use
+
+
+```r
+#only available for windows
+data.selected<-read.csv("clipboard",header = F,sep = "\t")
+
+#install.packages("clipr")
+library(clipr)
+data<- read_clip_tbl() #read from the clipboard directly
+```
+
+As you can see, there are many ways to import data. The manual option will be to use the `Import Dataset` button in the environment window, which will take your file the same way as `file.choose()`. Now, we got the file ready for analysis and interpretation. 
+
+> R and its packages have a lot of built-in data for our use and practice. Use the command **data()** to get the names of the data sets that you can use.
